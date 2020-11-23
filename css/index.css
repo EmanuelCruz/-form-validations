@@ -1,0 +1,176 @@
+:root {
+    --color-primary:#FF1466;
+    --color-secondary:#950AEE;
+    --color-tertiary :#C186E7;
+    --color-botton-primary: #61f7ac88;
+    --color-botton-secundary: #f7fffb8f;
+}
+
+body {
+    background-image: linear-gradient(to left top, #ff1466, #fd2f86, #f647a3, #ea5dbc, #da70d2, #d16fda, #c56fe1, #b86fe9, #b05dea, #a849ec, #9f32ed, #950aee);
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "baloo-regular";
+}
+
+.center-rows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-columns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section {
+    width: 100vw;
+    min-height: 70vh;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.section--send-mail {
+    height: 450px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.send-mail {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: -2px -3px 37px 2px rgba(0,0,0,.3);
+}
+
+.send-mail__header {
+    border-radius: 5px 5px 0px 0px;
+    /* background: rgba(119, 0, 255, 0.171); */
+    background: rgba(8, 8, 8, 0.24);
+    align-self: stretch;
+}
+
+.send-mail__title {
+    margin: 0px;
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+.send-mail__main {
+    align-self: stretch;
+    border-radius: 0px 0px 5px 5px;
+    background: #ff196d10;
+}
+
+.form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.form__label {
+    align-self: flex-start;
+}
+
+.form__input {
+    align-self: stretch;
+    margin-bottom: 5px;
+    background: #f8f8f84f;
+    padding: 0px 5px;
+    border-radius: 3px;
+    border: 1px transparent;
+    font-family: "baloo-regular";
+    font-size: 15px;
+    resize: none;
+}
+
+.form__input:focus {
+    outline: 1px solid white;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.input--send {
+    width: 45%;
+    border: 1px transparent;
+    background: #9d39efb6;
+    border-radius: 4px;
+    font-family: "baloo-bold";
+    font-size: 14px;
+    color: white;
+    padding: 5px;
+    box-shadow: 0px 0px 25px 2px rgba(0,0,0,.3);
+    cursor: pointer;
+}
+
+.input--send:focus {
+    outline: none;
+}
+
+.input--send:active {
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 15px 2px rgba(0,0,0,.3);
+}
+
+.input--restart {
+    width: 45%;
+    border: 1px transparent;
+    background: #ff196d34;
+    border-radius: 4px;
+    font-family: "baloo-bold";
+    font-size: 14px;
+    color: white;
+    padding: 5px;
+    box-shadow: 0px 0px 40px 2px rgba(0,0,0,.3);
+    cursor: pointer;
+}
+
+.input--restart:focus {
+    outline: none;
+}
+
+
+.input--restart:active {
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 15px 2px rgba(0,0,0,.3);
+}
+
+@font-face {
+    font-family: "baloo-regular";
+    src: url('../assets/fonts/BalooPaaji2-Regular.ttf');
+}
+
+@font-face {
+    font-family: "baloo-bold";
+    src: url('../assets/fonts/BalooPaaji2-Bold.ttf');
+}
+
+@media screen and (min-width: 768px) {
+    .send-mail {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .send-mail {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .send-mail {
+        width: 30%;
+    }
+}
