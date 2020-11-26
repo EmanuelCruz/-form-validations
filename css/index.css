@@ -1,9 +1,8 @@
 :root {
-    --color-primary:#FF1466;
-    --color-secondary:#950AEE;
-    --color-tertiary :#C186E7;
-    --color-botton-primary: #61f7ac88;
-    --color-botton-secundary: #f7fffb8f;
+    --color-msg-error:#FF1466;
+    --border-boton-send:#8B50B4;
+    --color-secundary: #c172fa;
+    --border-boton-restart:#808080;
 }
 
 body {
@@ -53,7 +52,6 @@ body {
 
 .send-mail__header {
     border-radius: 5px 5px 0px 0px;
-    /* background: rgba(119, 0, 255, 0.171); */
     background: rgba(8, 8, 8, 0.24);
     align-self: stretch;
 }
@@ -63,11 +61,13 @@ body {
     padding: 15px;
     text-align: center;
     color: white;
+    letter-spacing: 2px;
 }
+
 .send-mail__main {
     align-self: stretch;
     border-radius: 0px 0px 5px 5px;
-    background: #ff196d10;
+    background: rgb(255, 255, 255);
 }
 
 .form {
@@ -79,39 +79,46 @@ body {
     align-self: flex-start;
 }
 
+.form__error {
+    color: red;
+    margin-left: 8px;
+    font-size: 12px;
+}
+
 .form__input {
     align-self: stretch;
     margin-bottom: 5px;
-    background: #f8f8f84f;
+    background: #e7e7e7;
     padding: 0px 5px;
     border-radius: 3px;
-    border: 1px transparent;
+    border: 1px solid white;
     font-family: "baloo-regular";
     font-size: 15px;
     resize: none;
 }
 
 .form__input:focus {
-    outline: 1px solid white;
+    outline: 1px solid grey;
 }
 
 .buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .input--send {
     width: 45%;
-    border: 1px transparent;
-    background: #9d39efb6;
     border-radius: 4px;
     font-family: "baloo-bold";
-    font-size: 14px;
-    color: white;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: var(--border-boton-send);
     padding: 5px;
-    box-shadow: 0px 0px 25px 2px rgba(0,0,0,.3);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,.3);
+    border: 1px solid var(--border-boton-send);
+    background: white;
     cursor: pointer;
 }
 
@@ -121,19 +128,20 @@ body {
 
 .input--send:active {
     transition: all 0.3s ease;
-    box-shadow: 0px 0px 15px 2px rgba(0,0,0,.3);
+    box-shadow: none;
 }
 
 .input--restart {
     width: 45%;
-    border: 1px transparent;
-    background: #ff196d34;
+    border: 1px solid var(--border-boton-restart);
     border-radius: 4px;
     font-family: "baloo-bold";
-    font-size: 14px;
-    color: white;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: grey;
     padding: 5px;
-    box-shadow: 0px 0px 40px 2px rgba(0,0,0,.3);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,.3);
+    background: white;
     cursor: pointer;
 }
 
@@ -144,8 +152,64 @@ body {
 
 .input--restart:active {
     transition: all 0.3s ease;
-    box-shadow: 0px 0px 15px 2px rgba(0,0,0,.3);
+    box-shadow: none;
 }
+
+.disabled-input {
+    box-shadow: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.disabled-span {
+    opacity: 0;
+}
+
+.error {
+    border-bottom: 1px solid;
+    border-bottom-color: var(--color-msg-error);
+}
+
+.loader {
+    display: none;
+    align-self: center;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+.loader__element {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    border: 3px solid transparent;
+    border-top-color: var(--border-boton-send);
+    border-left-color: var(--border-boton-send);
+    border-radius: 50%;
+    animation: loader 1.2s linear infinite;
+}
+
+.confirmation-message {
+    width: 100%;
+    text-align: center;
+    align-self: center;
+    padding: 2px 0px;
+    background: var(--border-boton-send);
+    color: white;
+    border: 1px solid var(--border-boton-send);
+    border-radius: 4px;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 @font-face {
     font-family: "baloo-regular";

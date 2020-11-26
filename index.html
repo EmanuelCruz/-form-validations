@@ -14,15 +14,18 @@
             </header>
             <main class="send-mail__main">
                 <form action="" class="form">
-                    <label for="" class="form__label">Para</label>
-                    <input type="mail" name="" id="" class="form__input imput--text">
-                    <label for="" class="form__label">Asunto</label>
-                    <input type="text" name="" id="" class="form__input imput--text"> 
-                    <label for="" class="form__label">Mensaje</label>
-                    <textarea name="" id="" cols="30" rows="10" class="form__input imput--text-area"></textarea>
+                    <label for="mail" class="form__label">Para<span class="form__error disabled-span">(Campo obligatorio o valor incorrecto)</span></label>
+                    <input type="email" name="" id="mail" class="form__input imput--text">
+                    <label for="asunto" class="form__label">Asunto<span class="form__error disabled-span">(Campo obligatorio)</span></label>
+                    <input type="text" name="" id="asunto" class="form__input imput--text"> 
+                    <label for="mensaje" class="form__label">Mensaje<span class="form__error disabled-span">(Campo obligatorio)</span></label>
+                    <textarea name="" id="mensaje" cols="30" rows="10" class="form__input imput--text-area"></textarea>
+                    <div class="loader">
+                        <div class="loader__element"></div>
+                    </div>
                     <div class="buttons">
-                        <input type="submit" value="Enviar" class="input--send">
-                        <input type="reset" value="Limpiar" class="input--restart">
+                        <input type="submit" value="Enviar" class="input--send disabled-input" disabled>
+                        <input type="reset" value="Limpiar" class="input--restart disabled-input" disabled>
                     </div>
                 </form>
             </main>
